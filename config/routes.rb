@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   get("/dice/number/sides", { :controller => "dice", :action => "dynamic" })
 
-  get("/", { :controller => "home", :action => "home" })
+  get("/", { :controller => "dice", :action => "home" })
 end
