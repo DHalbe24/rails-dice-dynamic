@@ -4,15 +4,15 @@ class DiceController < ApplicationController
   end
 
   def two6
-    @dice_roll = rand(1..6)
-    @dice_roll = rand(1..6)
+    @dice_roll1 = rand(1..6)
+    @dice_roll2 = rand(1..6)
 
     render({ :template => "dice_templates/two6" })
   end
 
   def two10
-    @dice_roll = rand(1..10)
-    @dice_roll = rand(1..10)
+    @dice_roll1 = rand(1..10)
+    @dice_roll2 = rand(1..10)
 
     render({ :template => "dice_templates/two10" })
   end
@@ -24,19 +24,20 @@ class DiceController < ApplicationController
   end
 
   def five4
-    @dice_roll = rand(1..4)
-    @dice_roll = rand(1..4)
-    @dice_roll = rand(1..4)
-    @dice_roll = rand(1..4)
-    @dice_roll = rand(1..4)    
+    @dice_roll1 = rand(1..4)
+    @dice_roll2 = rand(1..4)
+    @dice_roll3 = rand(1..4)
+    @dice_roll4 = rand(1..4)
+    @dice_roll5 = rand(1..4)    
 
     render({ :template => "dice_templates/five4" })
   end
 
   def dynamic
-    @dice_roll = rand(1..:sides) # forgot how to work with params
+    #@dice_roll = rand(1..@sides) # forgot how to work with params
     @number = params.fetch("number").to_i # for getting user input
     @sides = params.fetch("sides").to_i
+    #@dice_roll = rand(1..@sides)
 
     @rolls = []
 
